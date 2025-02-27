@@ -7,8 +7,8 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load the abstractive summarization model
-abstractive_summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
+# Load a smaller summarization model
+abstractive_summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
 # Function for extractive summarization
 def extractive_summarization(text, num_sentences=3):
