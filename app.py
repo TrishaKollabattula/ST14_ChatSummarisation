@@ -49,7 +49,7 @@ def summarize():
     try:
         if summary_type == 'abstractive':
             # Generate abstractive summary
-            summary = abstractive_summarizer(text, max_length=50, min_length=25, do_sample=False)
+            summary = abstractive_summarizer(text, max_length=150, min_length=30, do_sample=False)
             summary = summary[0]['summary_text']
         elif summary_type == 'extractive':
             # Generate extractive summary
