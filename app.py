@@ -7,7 +7,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the abstractive summarization model
-abstractive_summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+abstractive_summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
 
 # Function for extractive summarization
 def extractive_summarization(text, num_sentences=3):
@@ -49,7 +49,7 @@ def summarize():
     try:
         if summary_type == 'abstractive':
             # Generate abstractive summary
-            summary = abstractive_summarizer(text, max_length=150, min_length=30, do_sample=False)
+            summary = abstractive_summarizer(text, max_length=100, min_length=30, do_sample=False)
             summary = summary[0]['summary_text']
         elif summary_type == 'extractive':
             # Generate extractive summary
