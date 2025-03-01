@@ -1,6 +1,6 @@
-Flask==2.3.2
-transformers==4.30.0
-torch==2.0.1
-scikit-learn==1.3.0
-gunicorn==20.1.0
-numpy==1.23.5
+Flask
+transformers
+torch
+scikit-learn
+gunicorn
+numpy

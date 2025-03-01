@@ -1,4 +1,3 @@
-import os
 from flask import Flask, request, jsonify, render_template
 from transformers import pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -7,8 +6,8 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load a smaller summarization model
-abstractive_summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+# Load the abstractive summarization model
+abstractive_summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
 
 # Function for extractive summarization
 def extractive_summarization(text, num_sentences=3):
@@ -63,6 +62,4 @@ def summarize():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    # Bind to the PORT environment variable provided by Render (or default to 5000 for local development)
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(debug=True)
