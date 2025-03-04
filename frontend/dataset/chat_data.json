@@ -1,0 +1,10 @@
+{
+    "chats": [
+        "User1: Hi, how are you?",
+        "User2: I'm good! How about you?",
+        "User1: I'm doing well. Just working on a project.",
+        "User2: Oh nice! What is it about?",
+        "User1: It's about chat summarization using NLP.",
+        "User2: That sounds interesting! Tell me more."
+    ]
+}
